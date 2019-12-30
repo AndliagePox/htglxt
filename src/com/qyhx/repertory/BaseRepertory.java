@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-class BaseRepertory {
+abstract class BaseRepertory {
     public ResultSet executeSelect(String sql) {
         try {
             Connection con = Database.getConnection();

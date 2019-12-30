@@ -1,4 +1,4 @@
 package com.qyhx.printer;
 
-public class HTPrinter extends BasePrinter {
+public abstract class HTPrinter extends BasePrinter {
 }

@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-class Database {
+abstract class Database {
     private static String driver = "";
     private static String database = "";
     private static String username = "";
