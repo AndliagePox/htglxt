@@ -2,6 +2,7 @@ package com.qyhx.controller;
 
 import com.qyhx.entity.XM;
 import com.qyhx.printer.XMPrinter;
+import com.qyhx.repertory.HTRepertory;
 import com.qyhx.repertory.XMRepertory;
 
 import java.util.Scanner;
@@ -90,9 +91,12 @@ public class XMController extends BaseController implements ControllerInterface 
             System.out.println("未找到该id");
             return;
         }
-
-        xmRepertory.deleteOne(id);
-        System.out.println("该项目删除完成！");
+       if(xmRepertory.idIsUsedInHTB(id)){
+           System.out.println("该项目已经建立合同，无法删除！");
+       }else {
+           xmRepertory.deleteOne(id);
+           System.out.println("该项目删除完成！");
+       }
     }
 
     @Override

@@ -105,7 +105,7 @@ public class XMRepertory extends BaseRepertory {
         executeUpdate(sql);
     }
 
-    private boolean idIsUsedInHTB(int id) {
+    public boolean idIsUsedInHTB(int id) {
         String sql = "select * from htb where xm_id = " + id;
         ResultSet rs = executeSelect(sql);
         try {
