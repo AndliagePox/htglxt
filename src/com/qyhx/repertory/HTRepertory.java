@@ -51,4 +51,15 @@ public class HTRepertory extends BaseRepertory {
                 ht.getName(), ht.getNumber(), ht.getqTime(), ht.getKhId(), ht.getXmId(), ht.getId());
         executeUpdate(sql);
     }
+
+    public void deleteOneById(int id) {
+        String sql = "delete from htb where id = %d" + id;
+        executeUpdate(sql);
+    }
+
+    public void insertOne(HT ht) {
+        String sql = String.format("insert into htb(name, number, qtime, kh_id, xm_id) values('%s', '%s', '%s', %d, %d)",
+                ht.getName(), ht.getNumber(), ht.getqTime(), ht.getKhId(), ht.getXmId());
+        executeUpdate(sql);
+    }
 }

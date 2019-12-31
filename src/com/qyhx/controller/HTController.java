@@ -39,7 +39,16 @@ public class HTController extends BaseController implements ControllerInterface 
 
     @Override
     public void deleteOne() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入要删除的合同id：");
+        int id = scanner.nextInt();
+        HTRepertory htRepertory = new HTRepertory();
+        HT ht = htRepertory.findOneById(id);
+        if (ht == null) {
+            System.out.println("未查询到该合同");
+        } else {
+            htRepertory.deleteOneById(id);
+        }
     }
 
     @Override
