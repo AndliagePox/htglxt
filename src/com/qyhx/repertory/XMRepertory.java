@@ -16,7 +16,7 @@ public class XMRepertory extends BaseRepertory {
                 list.add(new XM(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("numeber"),
+                        rs.getString("number"),
                         rs.getString("stime"),
                         rs.getString("ftime"),
                         rs.getFloat("money")
