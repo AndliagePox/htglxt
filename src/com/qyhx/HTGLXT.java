@@ -116,17 +116,31 @@ public class HTGLXT {
                         case "kh":
                             switch (commands[3]) {
                                 case "id":
+                                    khController.findById();
+                                    break;
                                 case "name":
+                                    khController.findByName();
+                                    break;
                                 case "card":
+                                    khController.findByCard();
+                                    break;
                                 case "phone":
+                                    khController.findByPhone();
+                                    break;
                                 default: System.out.println(commands[3] + "属性不能查询");
                             }
                             break;
                         case "xm":
                             switch (commands[3]) {
                                 case "id":
+                                    xmController.findById();
+                                    break;
                                 case "name":
+                                    xmController.findByName();
+                                    break;
                                 case "number":
+                                    xmController.findByNumber();
+                                    break;
                                 default: System.out.println(commands[3] + "属性不能查询");
                             }
                             break;
