@@ -20,4 +20,20 @@ public class KHController extends BaseController implements ControllerInterface 
     public void insertOne() {
 
     }
+
+    public void findById() {
+
+    }
+
+    public void findByName() {
+
+    }
+
+    public void findByCard() {
+
+    }
+
+    public void findByPhone() {
+
+    }
 }

@@ -35,6 +35,7 @@ public class HTController extends BaseController implements ControllerInterface 
         System.out.print("输入合同对应项目的项目id：");
         ht.setXmId(scanner.nextInt());
         htRepertory.updateOne(ht);
+        System.out.println("更新成功");
     }
 
     @Override
@@ -48,6 +49,7 @@ public class HTController extends BaseController implements ControllerInterface 
             System.out.println("未查询到该合同");
         } else {
             htRepertory.deleteOneById(id);
+            System.out.println("删除成功");
         }
     }
 
@@ -67,5 +69,26 @@ public class HTController extends BaseController implements ControllerInterface 
         System.out.print("输入合同对应项目的项目id：");
         ht.setXmId(scanner.nextInt());
         htRepertory.insertOne(ht);
+        System.out.println("插入成功");
+    }
+
+    public void findById() {
+
+    }
+
+    public void findByName() {
+
+    }
+
+    public void findByNumber() {
+
+    }
+
+    public void findByKH() {
+
+    }
+
+    public void findByXM() {
+
     }
 }
