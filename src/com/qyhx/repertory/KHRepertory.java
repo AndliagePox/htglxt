@@ -43,7 +43,7 @@ public class KHRepertory extends BaseRepertory {
     public List<KH> findOneByName(String name) {
         List<KH> list = new ArrayList<>();
         try {
-            ResultSet zz = executeSelect("select * from khb where name = " + name + "'");
+            ResultSet zz = executeSelect("select * from khb where name = '" + name + "'");
             while (zz.next()) {
                 list.add(new KH(
                         zz.getInt("id"),
@@ -60,7 +60,7 @@ public class KHRepertory extends BaseRepertory {
     public List<KH> findOneByCard(String card) {
         List<KH> list = new ArrayList<>();
         try {
-            ResultSet zz = executeSelect("select * from khb where card = " + card + "'");
+            ResultSet zz = executeSelect("select * from khb where card = '" + card + "'");
             while (zz.next()) {
                 list.add(new KH(
                         zz.getInt("id"),
@@ -77,7 +77,7 @@ public class KHRepertory extends BaseRepertory {
     public List<KH> findOneByPhone(String phone) {
         List<KH> list = new ArrayList<>();
         try {
-            ResultSet zz = executeSelect("select * from khb where phone = " + phone + "'");
+            ResultSet zz = executeSelect("select * from khb where phone = '" + phone + "'");
             while (zz.next()) {
                 list.add(new KH(
                         zz.getInt("id"),
