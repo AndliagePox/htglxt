@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class XMRepertory extends BaseRepertory {
     public List<XM> findAll(){
@@ -26,5 +27,11 @@ public class XMRepertory extends BaseRepertory {
           e.printStackTrace();
         }
         return list;
+    }
+    public  String upDate(){
+        Scanner RS = new Scanner(System.in);
+        System.out.print("添加：(回车结束)");
+        String rs = RS.nextLine();
+
     }
 }

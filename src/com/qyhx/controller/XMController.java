@@ -1,5 +1,6 @@
 package com.qyhx.controller;
 
+import com.qyhx.entity.XM;
 import com.qyhx.printer.XMPrinter;
 import com.qyhx.repertory.XMRepertory;
 
@@ -12,6 +13,7 @@ public class XMController extends BaseController implements ControllerInterface 
 
     @Override
     public void updateOne() {
+        XMRepertory xmRepertory = new XMRepertory();
 
     }
 
