@@ -32,6 +32,6 @@ public class KH {
 
     @Override
     public String toString() {
-        return String.format("%10s\t%10s\t%10s\t%10s\n", id, name, card, phone);
+        return String.format("%5s\t%10s\t%10s\t%10s\n", id, name, card, phone);
     }
 }
