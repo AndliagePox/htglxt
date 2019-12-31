@@ -48,7 +48,12 @@ public class KHController extends BaseController implements ControllerInterface 
         KH kh = khRepertory.findOneById(id);
         if (kh == null) {
             System.out.println("未找到到该客户");
-        } else {
+            return;
+        }
+        if(khRepertory.idIsUsedInHTB(id)) {
+            System.out.println("该客户已经建立合同，无法删除！");
+        }else
+        {
             khRepertory.deleteOneById(id);
             System.out.println("删除成功");
         }

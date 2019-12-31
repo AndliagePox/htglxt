@@ -105,5 +105,15 @@ public class KHRepertory extends BaseRepertory {
                 kh.getName(), kh.getCard(), kh.getPhone());
         executeUpdate(sql);
     }
+    public boolean idIsUsedInHTB(int id) {
+        String sql = "select * from htb where kh_id = " + id;
+        ResultSet zz = executeSelect(sql);
+        try {
+            return zz.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return true;
+        }
+    }
 }
 
