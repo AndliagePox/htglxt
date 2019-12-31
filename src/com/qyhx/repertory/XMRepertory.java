@@ -29,14 +29,34 @@ public class XMRepertory extends BaseRepertory {
         return list;
     }
 
+    public  XM findOneID(int id){
+        List<XM> list = new ArrayList<>();
+        try{
+            ResultSet rs = executeSelect("select * from xmb where id = %d"+id);
+            while (rs.next()){
+                list.add(new XM(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("numeber"),
+                        rs.getString("stime"),
+                        rs.getString("ftime"),
+                        rs.getFloat("money")
+                ));
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return list.get(0);
+    }
+
     public void updataOne(XM xm){
         String sql = String.format("update xmb set name = '%s',number = '%s',stime = '%s',ftime = '%s',money = %f where id = %d",
                 xm.getName(),xm.getNumber(),xm.getsTime(),xm.getfTime(),xm.getMoney(),xm.getId());
         executeUpdate(sql);
     }
 
-    public void deleteOne(XM xm){
-        String sql = String.format("delet from xmb where id = %d",xm.getId());
+    public void deleteOne(int id){
+        String sql = "delete from xmb where id = %d"+id;
         executeUpdate(sql);
     }
 
