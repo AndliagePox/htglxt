@@ -13,6 +13,27 @@ public class XMController extends BaseController implements ControllerInterface 
         XMPrinter.printXMList(xmRepertory.findAll());
     }
 
+    public  void  findById(){
+        XMRepertory xmRepertory = new XMRepertory();
+        Scanner s = new Scanner(System.in);
+        System.out.println("输入要查询的项目id:");
+        XMPrinter.printXMList(xmRepertory.findOneID(s.nextInt()));
+    }
+
+    public  void  findByName(){
+        XMRepertory xmRepertory = new XMRepertory();
+        Scanner s = new Scanner(System.in);
+        System.out.println("输入要查询的项目名字:");
+        XMPrinter.printXMList(xmRepertory.findOneName(s.nextLine()));
+    }
+
+    public  void  findByNumber(){
+        XMRepertory xmRepertory = new XMRepertory();
+        Scanner s = new Scanner(System.in);
+        System.out.println("输入要查询的项目号:");
+        XMPrinter.printXMList(xmRepertory.findOneNumber(s.nextLine()));
+    }
+
     @Override
     public void updateOne() {
         Scanner s = new Scanner(System.in);
