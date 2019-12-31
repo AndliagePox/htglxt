@@ -106,7 +106,7 @@ public class HTGLXT {
                 case "exit":
                     BasePrinter.bye();
                     System.exit(0);
-                default: System.out.println("无法解析的命令");
+                default: System.out.println("无法解析命令");
             }
         }
     }
