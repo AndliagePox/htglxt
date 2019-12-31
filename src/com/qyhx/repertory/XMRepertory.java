@@ -104,6 +104,17 @@ public class XMRepertory extends BaseRepertory {
         xm.getId(),xm.getName(),xm.getNumber(),xm.getsTime(),xm.getfTime(),xm.getMoney());
         executeUpdate(sql);
     }
+
+    private boolean idIsUsedInHTB(int id) {
+        String sql = "select * from htb where xm_id = " + id;
+        ResultSet rs = executeSelect(sql);
+        try {
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return true;
+        }
+    }
 }
 
 
