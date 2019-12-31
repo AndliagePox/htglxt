@@ -15,5 +15,4 @@ public abstract class XMPrinter extends BasePrinter {
             System.out.println(xm);
         }
     }
-    }
 }
