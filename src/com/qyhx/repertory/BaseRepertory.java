@@ -10,7 +10,7 @@ abstract class BaseRepertory {
     private static int KHCount = 0;
     private static int XMCount = 0;
 
-    protected int nextEntityId(String tableName) {
+    public int nextEntityId(String tableName) {
         int baseId;
         try {
             ResultSet rs = executeSelect("select max(id) + 1 as n from " + tableName);

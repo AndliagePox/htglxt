@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class XMRepertory extends BaseRepertory {
     public List<XM> findAll(){
@@ -49,7 +48,7 @@ public class XMRepertory extends BaseRepertory {
         return list.get(0);
     }
 
-    public void updataOne(XM xm){
+    public void updateOne(XM xm){
         String sql = String.format("update xmb set name = '%s',number = '%s',stime = '%s',ftime = '%s',money = %f where id = %d",
                 xm.getName(),xm.getNumber(),xm.getsTime(),xm.getfTime(),xm.getMoney(),xm.getId());
         executeUpdate(sql);
