@@ -9,7 +9,7 @@ public abstract class BasePrinter {
     public static void help() {
         System.out.println("\t命令    \t\t\t\t作用");
         System.out.println("--------------------------------------------------");
-        System.out.println("\tshow xxx\t\t\t\t显示xxx表中的数据，如show khb。");
+        System.out.println("\tshow xxx\t\t\t\t显示xxx实体对应表中的数据，如show kh。");
         System.out.println("\texit    \t\t\t\t退出");
     }
 
