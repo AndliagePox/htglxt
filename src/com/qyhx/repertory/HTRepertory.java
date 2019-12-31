@@ -142,4 +142,26 @@ public class HTRepertory extends BaseRepertory {
                 ht.getName(), ht.getNumber(), ht.getqTime(), ht.getKhId(), ht.getXmId());
         executeUpdate(sql);
     }
+
+    public boolean idIsNotInKHB(int id) {
+        String sql = "select * from khb where id = " + id;
+        ResultSet rs = executeSelect(sql);
+        try {
+            return !rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return true;
+        }
+    }
+
+    public boolean idIsNotInXMB(int id) {
+        String sql = "select * from xmb where id = " + id;
+        ResultSet rs = executeSelect(sql);
+        try {
+            return !rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return true;
+        }
+    }
 }

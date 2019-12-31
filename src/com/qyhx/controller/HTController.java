@@ -32,10 +32,20 @@ public class HTController extends BaseController implements ControllerInterface 
         ht.setNumber(scanner.nextLine());
         System.out.println("输入更新后的合同签订时间(格式:yyyy-mm-dd HH:ii:ss)：");
         ht.setqTime(scanner.nextLine());
-        System.out.print("输入合同对应客户的客户id：");
-        ht.setKhId(scanner.nextInt());
-        System.out.print("输入合同对应项目的项目id：");
-        ht.setXmId(scanner.nextInt());
+        System.out.print("输入更新后的合同对应客户的客户id：");
+        int khId = scanner.nextInt();
+        if (htRepertory.idIsNotInKHB(khId)) {
+            System.out.println("\n更新失败：必须输入已存在的客户id");
+            return;
+        }
+        System.out.print("输入更新后的合同对应项目的项目id：");
+        ht.setKhId(khId);
+        int xmId = scanner.nextInt();
+        if (htRepertory.idIsNotInXMB(xmId)) {
+            System.out.println("\n更新失败：必须输入已存在的项目id");
+            return;
+        }
+        ht.setXmId(xmId);
         htRepertory.updateOne(ht);
         System.out.println("更新成功");
     }
@@ -67,9 +77,19 @@ public class HTController extends BaseController implements ControllerInterface 
         System.out.println("输入合同签订时间(格式:yyyy-mm-dd HH:ii:ss)：");
         ht.setqTime(scanner.nextLine());
         System.out.print("输入合同对应客户的客户id：");
-        ht.setKhId(scanner.nextInt());
+        int khId = scanner.nextInt();
+        if (htRepertory.idIsNotInKHB(khId)) {
+            System.out.println("\n插入失败：必须输入已存在的客户id");
+            return;
+        }
         System.out.print("输入合同对应项目的项目id：");
-        ht.setXmId(scanner.nextInt());
+        ht.setKhId(khId);
+        int xmId = scanner.nextInt();
+        if (htRepertory.idIsNotInXMB(xmId)) {
+            System.out.println("\n插入失败：必须输入已存在的项目id");
+            return;
+        }
+        ht.setXmId(xmId);
         htRepertory.insertOne(ht);
         System.out.println("插入成功");
     }
