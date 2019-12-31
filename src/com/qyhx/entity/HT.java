@@ -67,6 +67,6 @@ public class HT {
 
     @Override
     public String toString() {
-        return String.format("%6d\t%20s\t%15s\t%25s\t%6d\t%6d\n", id, name, number, qTime, khId, xmId);
+        return String.format("%6d\t%20s\t%15s\t%25s\t%8d\t%8d\n", id, name, number, qTime, khId, xmId);
     }
 }

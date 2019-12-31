@@ -103,6 +103,57 @@ public class HTGLXT {
                             System.out.println("无此表");
                     }
                     break;
+                case "find":
+                    if (commandsCount != 4) {
+                        System.out.println("命令参数数量错误");
+                        break;
+                    }
+                    if (!commands[2].equals("by")) {
+                        System.out.println("命令语法错误");
+                        break;
+                    }
+                    switch (commands[1]) {
+                        case "kh":
+                            switch (commands[3]) {
+                                case "id":
+                                case "name":
+                                case "card":
+                                case "phone":
+                                default: System.out.println(commands[3] + "属性不能查询");
+                            }
+                            break;
+                        case "xm":
+                            switch (commands[3]) {
+                                case "id":
+                                case "name":
+                                case "number":
+                                default: System.out.println(commands[3] + "属性不能查询");
+                            }
+                            break;
+                        case "ht":
+                            switch (commands[3]) {
+                                case "id":
+                                    htController.findById();
+                                    break;
+                                case "name":
+                                    htController.findByName();
+                                    break;
+                                case "number":
+                                    htController.findByNumber();
+                                    break;
+                                case "kh":
+                                    htController.findByKH();
+                                    break;
+                                case "xm":
+                                    htController.findByXM();
+                                    break;
+                                default: System.out.println(commands[3] + "属性不能查询");
+                            }
+                            break;
+                        default:
+                            System.out.println("无此表");
+                    }
+                    break;
                 case "exit":
                     BasePrinter.bye();
                     System.exit(0);
