@@ -1,4 +1,6 @@
 /.idea/*
 /out/*
+/database.cfg
+/htglxt.iml
 database.cfg
 htglxt.iml
