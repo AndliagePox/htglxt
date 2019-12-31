@@ -28,10 +28,10 @@ public class XMRepertory extends BaseRepertory {
         }
         return list;
     }
-    public  String upDate(){
-        Scanner RS = new Scanner(System.in);
-        System.out.print("添加：(回车结束)");
-        String rs = RS.nextLine();
+    public void updata(XM xm){
+        String sql = String.format("");
+    }
 
     }
 }
+
