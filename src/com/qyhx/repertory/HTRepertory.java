@@ -133,7 +133,7 @@ public class HTRepertory extends BaseRepertory {
     }
 
     public void deleteOneById(int id) {
-        String sql = "delete from htb where id = " + id;
+        String sql = "delete from htb where id =" + id;
         executeUpdate(sql);
     }
 
