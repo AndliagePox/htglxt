@@ -20,7 +20,7 @@ abstract class Database {
                 loadConfig();
                 Class.forName(driver);
                 connection = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/" + database + "?useSSL=false&serverTimezone=GMT%2B8",
+                        "jdbc:mysql://localhost:3306/" + database + "?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true",
                         username,
                         password
                 );
