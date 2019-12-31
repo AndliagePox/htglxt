@@ -67,7 +67,7 @@ public class XM {
 
 
     public String toString(){
-        return String.format("%6d\t%20d\t%20%\t%20d\t%20d\t%20d\n",id,name,number,sTime,fTime,money);
+        return String.format("%6d\t%20s\t%20s\t%20s\t%20s\t%10f\n",id,name,number,sTime,fTime,money);
     }
 }
 

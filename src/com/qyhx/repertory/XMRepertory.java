@@ -28,10 +28,23 @@ public class XMRepertory extends BaseRepertory {
         }
         return list;
     }
-    public void updata(XM xm){
-        String sql = String.format("");
+
+    public void updataOne(XM xm){
+        String sql = String.format("update xmb set name = '%s',number = '%s',stime = '%s',ftime = '%s',money = %f where id = %d",
+                xm.getName(),xm.getNumber(),xm.getsTime(),xm.getfTime(),xm.getMoney(),xm.getId());
+        executeUpdate(sql);
     }
 
+    public void deleteOne(XM xm){
+        String sql = String.format("delet from xmb where id = %d",xm.getId());
+        executeUpdate(sql);
+    }
+
+    public void insertOne(XM xm){
+        String sql = String.format("insert into xmb( id , name , number , stime , ftime , money)values(%d,'%s','%s','%s','%s',%f)",
+        xm.getId(),xm.getName(),xm.getNumber(),xm.getsTime(),xm.getfTime(),xm.getMoney());
+        executeUpdate(sql);
     }
 }
+
 
