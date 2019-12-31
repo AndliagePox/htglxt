@@ -31,12 +31,12 @@ public class XMRepertory extends BaseRepertory {
     public  XM findOneID(int id){
         List<XM> list = new ArrayList<>();
         try{
-            ResultSet rs = executeSelect("select * from xmb where id = %d"+id);
+            ResultSet rs = executeSelect("select * from xmb where id = "+id);
             while (rs.next()){
                 list.add(new XM(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("numeber"),
+                        rs.getString("number"),
                         rs.getString("stime"),
                         rs.getString("ftime"),
                         rs.getFloat("money")
@@ -51,12 +51,12 @@ public class XMRepertory extends BaseRepertory {
     public  XM findOneName(String name){
         List<XM> list = new ArrayList<>();
         try{
-            ResultSet rs = executeSelect("select * from xmb where name = '%s'"+name);
+            ResultSet rs = executeSelect("select * from xmb where name = '"+name+"'");
             while (rs.next()){
                 list.add(new XM(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("numeber"),
+                        rs.getString("number"),
                         rs.getString("stime"),
                         rs.getString("ftime"),
                         rs.getFloat("money")
@@ -71,12 +71,12 @@ public class XMRepertory extends BaseRepertory {
     public  XM findOneNumber(String number){
         List<XM> list = new ArrayList<>();
         try{
-            ResultSet rs = executeSelect("select * from xmb where number = '%s'"+number);
+            ResultSet rs = executeSelect("select * from xmb where number = '"+number+"'");
             while (rs.next()){
                 list.add(new XM(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("numeber"),
+                        rs.getString("number"),
                         rs.getString("stime"),
                         rs.getString("ftime"),
                         rs.getFloat("money")
@@ -95,7 +95,7 @@ public class XMRepertory extends BaseRepertory {
     }
 
     public void deleteOne(int id){
-        String sql = "delete from xmb where id = %d"+id;
+        String sql = "delete from xmb where id = "+id;
         executeUpdate(sql);
     }
 

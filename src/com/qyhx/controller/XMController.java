@@ -17,21 +17,39 @@ public class XMController extends BaseController implements ControllerInterface 
         XMRepertory xmRepertory = new XMRepertory();
         Scanner s = new Scanner(System.in);
         System.out.println("输入要查询的项目id:");
-        XMPrinter.printXMList(xmRepertory.findOneID(s.nextInt()));
+        int id = s.nextInt();
+        XM xm = xmRepertory.findOneID(id);
+        if(xm == null){
+            System.out.println("未找到该项目！");
+            return;
+        }
+        XMPrinter.printXMList(xmRepertory.findOneID(id));
     }
 
     public  void  findByName(){
         XMRepertory xmRepertory = new XMRepertory();
         Scanner s = new Scanner(System.in);
         System.out.println("输入要查询的项目名字:");
-        XMPrinter.printXMList(xmRepertory.findOneName(s.nextLine()));
+        String name = s.nextLine();
+        XM xm = xmRepertory.findOneName(name);
+        if(xm == null){
+            System.out.println("未找到该项目！");
+            return;
+        }
+        XMPrinter.printXMList(xmRepertory.findOneName(name));
     }
 
     public  void  findByNumber(){
         XMRepertory xmRepertory = new XMRepertory();
         Scanner s = new Scanner(System.in);
         System.out.println("输入要查询的项目号:");
-        XMPrinter.printXMList(xmRepertory.findOneNumber(s.nextLine()));
+        String number = s.nextLine();
+        XM xm = xmRepertory.findOneNumber(number);
+        if(xm == null){
+            System.out.println("未找到该项目！");
+            return;
+        }
+        XMPrinter.printXMList(xmRepertory.findOneNumber(number));
     }
 
     @Override
@@ -45,13 +63,14 @@ public class XMController extends BaseController implements ControllerInterface 
             System.out.println("未找到该id");
             return;
         }
+        s.nextLine();
         System.out.println("输入更新后的项目名称:");
         xm.setName(s.nextLine());
         System.out.println("输入更新后的项目号:");
         xm.setNumber(s.nextLine());
-        System.out.println("输入更新后的项目开始时间:");
+        System.out.println("输入更新后的项目开始时间(格式:yyyy-mm-dd HH:ii:ss):");
         xm.setsTime(s.nextLine());
-        System.out.println("输入更新后的项目结束时间:");
+        System.out.println("输入更新后的项目结束时间(格式:yyyy-mm-dd HH:ii:ss):");
         xm.setfTime(s.nextLine());
         System.out.println("输入更新后的项目资金:");
         xm.setMoney(s.nextFloat());
@@ -82,7 +101,7 @@ public class XMController extends BaseController implements ControllerInterface 
 
         XMRepertory xmRepertory = new XMRepertory();
         XM xm = new XM(0,"","","","",0);
-        xm.setId(xmRepertory.nextEntityId("xmh"));
+        xm.setId(xmRepertory.nextEntityId("xmb"));
         System.out.println("输入新项目名称:");
         xm.setName(s.nextLine());
         System.out.println("输入新项目号:");

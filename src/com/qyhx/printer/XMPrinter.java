@@ -9,8 +9,8 @@ public abstract class XMPrinter extends BasePrinter {
         System.out.printf("%6s\t%20s\t%20s\t%20s\t%20s\t%10s\n",
                 "id", "name", "number", "stime", "ftime", "money"
         );
-        System.out.println("--------------------------------------" +
-                "-----------------------------------------------------");
+        System.out.println("----------------------------------------------------------" +
+                "------------------------------------------------------------------");
         for (XM xm : list) {
             System.out.println(xm);
         }
@@ -21,8 +21,8 @@ public abstract class XMPrinter extends BasePrinter {
         System.out.printf("%6s\t%20s\t%20s\t%20s\t%20s\t%10s\n",
                 "id", "name", "number", "stime", "ftime", "money"
         );
-        System.out.println("--------------------------------------" +
-                "-----------------------------------------------------");
+        System.out.println("----------------------------------------------------------" +
+                "------------------------------------------------------------------");
         System.out.println(xx);
     }
 }
