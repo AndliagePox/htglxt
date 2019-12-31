@@ -4,6 +4,7 @@ import com.qyhx.entity.HT;
 import com.qyhx.printer.HTPrinter;
 import com.qyhx.repertory.HTRepertory;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class HTController extends BaseController implements ControllerInterface {
@@ -24,6 +25,7 @@ public class HTController extends BaseController implements ControllerInterface 
             System.out.println("未查询到该合同");
             return;
         }
+        scanner.nextLine();
         System.out.print("输入更新后的合同名称：");
         ht.setName(scanner.nextLine());
         System.out.print("输入更新后的合同编号：");
@@ -73,22 +75,67 @@ public class HTController extends BaseController implements ControllerInterface 
     }
 
     public void findById() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入要查询的合同id：");
+        int id = scanner.nextInt();
+        HTRepertory htRepertory = new HTRepertory();
+        HT ht = htRepertory.findOneById(id);
+        if (ht == null) {
+            System.out.println("查询的合同不存在");
+        } else {
+            HTPrinter.printOneHT(ht);
+        }
     }
 
     public void findByName() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入要查询的合同名：");
+        String name = scanner.nextLine();
+        HTRepertory htRepertory = new HTRepertory();
+        List<HT> list = htRepertory.findByName(name);
+        if (list.size() == 0) {
+            System.out.println("查询的合同不存在");
+        } else {
+            HTPrinter.printHTList(list);
+        }
     }
 
     public void findByNumber() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入要查询的合同编号：");
+        String number = scanner.nextLine();
+        HTRepertory htRepertory = new HTRepertory();
+        List<HT> list = htRepertory.findByNumber(number);
+        if (list.size() == 0) {
+            System.out.println("查询的合同不存在");
+        } else {
+            HTPrinter.printHTList(list);
+        }
     }
 
     public void findByKH() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入要查询的合同对应的客户id：");
+        int id = scanner.nextInt();
+        HTRepertory htRepertory = new HTRepertory();
+        List<HT> list = htRepertory.findByKH(id);
+        if (list.size() == 0) {
+            System.out.println("查询的合同不存在");
+        } else {
+            HTPrinter.printHTList(list);
+        }
     }
 
     public void findByXM() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入要查询的合同对应的项目id：");
+        int id = scanner.nextInt();
+        HTRepertory htRepertory = new HTRepertory();
+        List<HT> list = htRepertory.findByXM(id);
+        if (list.size() == 0) {
+            System.out.println("查询的合同不存在");
+        } else {
+            HTPrinter.printHTList(list);
+        }
     }
 }

@@ -46,8 +46,88 @@ public class HTRepertory extends BaseRepertory {
         return null;
     }
 
+    public List<HT> findByName(String name) {
+        List<HT> list = new ArrayList<>();
+        try {
+            ResultSet rs = executeSelect("select * from htb where name = '" + name + "'");
+            while (rs.next()) {
+                list.add(new HT(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("number"),
+                        rs.getString("qtime"),
+                        rs.getInt("kh_id"),
+                        rs.getInt("xm_id")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<HT> findByNumber(String number) {
+        List<HT> list = new ArrayList<>();
+        try {
+            ResultSet rs = executeSelect("select * from htb where number = '" + number + "'");
+            while (rs.next()) {
+                list.add(new HT(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("number"),
+                        rs.getString("qtime"),
+                        rs.getInt("kh_id"),
+                        rs.getInt("xm_id")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<HT> findByKH(int khId) {
+        List<HT> list = new ArrayList<>();
+        try {
+            ResultSet rs = executeSelect("select * from htb where kh_id = " + khId);
+            while (rs.next()) {
+                list.add(new HT(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("number"),
+                        rs.getString("qtime"),
+                        rs.getInt("kh_id"),
+                        rs.getInt("xm_id")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<HT> findByXM(int xmId) {
+        List<HT> list = new ArrayList<>();
+        try {
+            ResultSet rs = executeSelect("select * from htb where xm_id = " + xmId);
+            while (rs.next()) {
+                list.add(new HT(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("number"),
+                        rs.getString("qtime"),
+                        rs.getInt("kh_id"),
+                        rs.getInt("xm_id")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     public void updateOne(HT ht) {
-        String sql = String.format("update from htb set name = '%s', number = '%s', qtime = '%s', kh_id = %d, xm_id = %d where id = %d",
+        String sql = String.format("update htb set name = '%s', number = '%s', qtime = '%s', kh_id = %d, xm_id = %d where id = %d",
                 ht.getName(), ht.getNumber(), ht.getqTime(), ht.getKhId(), ht.getXmId(), ht.getId());
         executeUpdate(sql);
     }

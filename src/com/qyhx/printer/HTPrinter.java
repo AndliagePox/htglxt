@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class HTPrinter extends BasePrinter {
     public static void printHTList(List<HT> list) {
-        System.out.printf("%6s\t%18s\t%11s\t%21s\t%6s\t%6s\n",
+        System.out.printf("\n%6s\t%18s\t%11s\t%21s\t%6s\t%6s\n",
                 "ID", "合同名", "合同编号", "签订时间", "客户ID", "项目ID"
         );
         System.out.println("----------------------------------------------" +
@@ -14,5 +14,14 @@ public abstract class HTPrinter extends BasePrinter {
         for (HT ht : list) {
             System.out.println(ht);
         }
+    }
+
+    public static void printOneHT(HT ht) {
+        System.out.printf("\n%6s\t%18s\t%11s\t%21s\t%6s\t%6s\n",
+                "ID", "合同名", "合同编号", "签订时间", "客户ID", "项目ID"
+        );
+        System.out.println("----------------------------------------------" +
+                "-----------------------------------------------------");
+        System.out.println(ht);
     }
 }
