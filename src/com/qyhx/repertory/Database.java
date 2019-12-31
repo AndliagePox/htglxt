@@ -46,7 +46,6 @@ abstract class Database {
                     index = line.indexOf(";");
                     line = line.substring(0, index);
                     driver = line;
-                    System.out.println(driver);
                     continue;
                 }
                 index = line.indexOf("database=");
@@ -55,7 +54,6 @@ abstract class Database {
                     index = line.indexOf(";");
                     line = line.substring(0, index);
                     database = line;
-                    System.out.println(driver);
                     continue;
                 }
                 index = line.indexOf("username=");
@@ -64,7 +62,6 @@ abstract class Database {
                     index = line.indexOf(";");
                     line = line.substring(0, index);
                     username = line;
-                    System.out.println(driver);
                     continue;
                 }
                 index = line.indexOf("password=");
@@ -73,7 +70,6 @@ abstract class Database {
                     index = line.indexOf(";");
                     line = line.substring(0, index);
                     password = line;
-                    System.out.println(driver);
                 }
             }
         } catch (Exception e) {

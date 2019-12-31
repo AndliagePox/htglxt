@@ -7,14 +7,13 @@ public abstract class BasePrinter {
     }
 
     public static void help() {
-        System.out.println();
+        System.out.println("\t命令    \t\t\t\t作用");
+        System.out.println("--------------------------------------------------");
+        System.out.println("\tshow xxx\t\t\t\t显示xxx实体对应表中的数据，如show kh。");
+        System.out.println("\texit    \t\t\t\t退出");
     }
 
-    public static void header() {
-        System.out.print("htglxt> ");
-    }
-
-    public static void unknowCommand() {
-        System.out.println("无法解析的命令！");
+    public static void bye() {
+        System.out.println("Bye!");
     }
 }

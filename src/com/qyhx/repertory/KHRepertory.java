@@ -7,9 +7,7 @@ import java.util.List;
 
 public class KHRepertory extends BaseRepertory {
     public List<KH> findKH() {
-        this.executeUpdate("");
+
         return new ArrayList<KH>();
     }
-
-
 }
