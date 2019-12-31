@@ -25,6 +25,7 @@ public class HTController extends BaseController implements ControllerInterface 
             System.out.println("未查询到该合同");
             return;
         }
+        scanner.nextLine();
         System.out.print("输入更新后的合同名称：");
         ht.setName(scanner.nextLine());
         System.out.print("输入更新后的合同编号：");

@@ -127,7 +127,7 @@ public class HTRepertory extends BaseRepertory {
     }
 
     public void updateOne(HT ht) {
-        String sql = String.format("update from htb set name = '%s', number = '%s', qtime = '%s', kh_id = %d, xm_id = %d where id = %d",
+        String sql = String.format("update htb set name = '%s', number = '%s', qtime = '%s', kh_id = %d, xm_id = %d where id = %d",
                 ht.getName(), ht.getNumber(), ht.getqTime(), ht.getKhId(), ht.getXmId(), ht.getId());
         executeUpdate(sql);
     }
