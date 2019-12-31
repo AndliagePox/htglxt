@@ -53,6 +53,19 @@ public class HTController extends BaseController implements ControllerInterface 
 
     @Override
     public void insertOne() {
-
+        Scanner scanner = new Scanner(System.in);
+        HTRepertory htRepertory = new HTRepertory();
+        HT ht = new HT(0, "", "", "", 0, 0);
+        System.out.print("输入合同名称：");
+        ht.setName(scanner.nextLine());
+        System.out.print("输入合同编号：");
+        ht.setNumber(scanner.nextLine());
+        System.out.println("输入合同签订时间(格式:yyyy-mm-dd HH:ii:ss)：");
+        ht.setqTime(scanner.nextLine());
+        System.out.print("输入合同对应客户的客户id：");
+        ht.setKhId(scanner.nextInt());
+        System.out.print("输入合同对应项目的项目id：");
+        ht.setXmId(scanner.nextInt());
+        htRepertory.insertOne(ht);
     }
 }
